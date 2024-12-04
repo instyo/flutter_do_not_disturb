@@ -37,4 +37,10 @@ class MethodChannelDoNotDisturb extends DoNotDisturbPlatform {
     return methodChannel.invokeMethod<void>(
         'setInterruptionFilter', filter.value);
   }
+
+  @override
+  Future<void> setNotificationPolicy(int notificationPolicy) {
+    return methodChannel.invokeMethod<void>(
+        'setNotificationPolicy', notificationPolicy);
+  }
 }
