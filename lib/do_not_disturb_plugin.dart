@@ -46,4 +46,11 @@ class DoNotDisturbPlugin {
     }
     return DoNotDisturbPlatform.instance.setInterruptionFilter(filter);
   }
+
+  Future<void> setNotificationPolicy(int notificationPolicy) async {
+    if (Platform.isIOS) {
+      return;
+    }
+    return DoNotDisturbPlatform.instance.setNotificationPolicy(notificationPolicy);
+  }
 }
